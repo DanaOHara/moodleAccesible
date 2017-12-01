@@ -4,7 +4,8 @@ class MdlCoursesController < ApplicationController
   # GET /mdl_courses
   # GET /mdl_courses.json
   def index
-    @mdl_courses = MdlCourse.all
+    @terminoABuscar = params[:terminoABuscar]
+    @mdl_courses = MdlCourse.where(:fullname => @terminoABuscar)
   end
 
   # GET /mdl_courses/1
