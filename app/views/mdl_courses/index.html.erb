@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mdl Courses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Sortorder</th>
+      <th>Fullname</th>
+      <th>Shortname</th>
+      <th>Idnumber</th>
+      <th>Summary</th>
+      <th>Summaryformat</th>
+      <th>Format</th>
+      <th>Showgrades</th>
+      <th>Newsitems</th>
+      <th>Startdate</th>
+      <th>Marker</th>
+      <th>Maxbytes</th>
+      <th>Legacyfiles</th>
+      <th>Showreports</th>
+      <th>Visible</th>
+      <th>Visibleold</th>
+      <th>Groupmode</th>
+      <th>Groupmodeforce</th>
+      <th>Defaultgroupingid</th>
+      <th>Lang</th>
+      <th>Calendartype</th>
+      <th>Theme</th>
+      <th>Timecreated</th>
+      <th>Timemodified</th>
+      <th>Requested</th>
+      <th>Enablecompletion</th>
+      <th>Completionnotify</th>
+      <th>Cacherev</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mdl_courses.each do |mdl_course| %>
+      <tr>
+        <td><%= mdl_course.category %></td>
+        <td><%= mdl_course.sortorder %></td>
+        <td><%= mdl_course.fullname %></td>
+        <td><%= mdl_course.shortname %></td>
+        <td><%= mdl_course.idnumber %></td>
+        <td><%= mdl_course.summary %></td>
+        <td><%= mdl_course.summaryformat %></td>
+        <td><%= mdl_course.format %></td>
+        <td><%= mdl_course.showgrades %></td>
+        <td><%= mdl_course.newsitems %></td>
+        <td><%= mdl_course.startdate %></td>
+        <td><%= mdl_course.marker %></td>
+        <td><%= mdl_course.maxbytes %></td>
+        <td><%= mdl_course.legacyfiles %></td>
+        <td><%= mdl_course.showreports %></td>
+        <td><%= mdl_course.visible %></td>
+        <td><%= mdl_course.visibleold %></td>
+        <td><%= mdl_course.groupmode %></td>
+        <td><%= mdl_course.groupmodeforce %></td>
+        <td><%= mdl_course.defaultgroupingid %></td>
+        <td><%= mdl_course.lang %></td>
+        <td><%= mdl_course.calendartype %></td>
+        <td><%= mdl_course.theme %></td>
+        <td><%= mdl_course.timecreated %></td>
+        <td><%= mdl_course.timemodified %></td>
+        <td><%= mdl_course.requested %></td>
+        <td><%= mdl_course.enablecompletion %></td>
+        <td><%= mdl_course.completionnotify %></td>
+        <td><%= mdl_course.cacherev %></td>
+        <td><%= link_to 'Show', mdl_course %></td>
+        <td><%= link_to 'Edit', edit_mdl_course_path(mdl_course) %></td>
+        <td><%= link_to 'Destroy', mdl_course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mdl Course', new_mdl_course_path %>
