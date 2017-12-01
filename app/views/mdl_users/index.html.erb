@@ -1,0 +1,129 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mdl Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Auth</th>
+      <th>Confirmed</th>
+      <th>Policyagreed</th>
+      <th>Deleted</th>
+      <th>Suspended</th>
+      <th>Mnethostid</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Idnumber</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+      <th>Emailstop</th>
+      <th>Icq</th>
+      <th>Skype</th>
+      <th>Yahoo</th>
+      <th>Aim</th>
+      <th>Msn</th>
+      <th>Phone1</th>
+      <th>Phone2</th>
+      <th>Institution</th>
+      <th>Department</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Lang</th>
+      <th>Calendartype</th>
+      <th>Theme</th>
+      <th>Timezone</th>
+      <th>Firstaccess</th>
+      <th>Lastaccess</th>
+      <th>Lastlogin</th>
+      <th>Currentlogin</th>
+      <th>Lastip</th>
+      <th>Secret</th>
+      <th>Picture</th>
+      <th>Url</th>
+      <th>Description</th>
+      <th>Descriptionformat</th>
+      <th>Mailformat</th>
+      <th>Maildigest</th>
+      <th>Maildisplay</th>
+      <th>Autosubscribe</th>
+      <th>Trackforums</th>
+      <th>Timecreated</th>
+      <th>Timemodified</th>
+      <th>Trustbitmask</th>
+      <th>Imagealt</th>
+      <th>Lastnamephonetic</th>
+      <th>Firstnamephonetic</th>
+      <th>Middlename</th>
+      <th>Alternatename</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mdl_users.each do |mdl_user| %>
+      <tr>
+        <td><%= mdl_user.auth %></td>
+        <td><%= mdl_user.confirmed %></td>
+        <td><%= mdl_user.policyagreed %></td>
+        <td><%= mdl_user.deleted %></td>
+        <td><%= mdl_user.suspended %></td>
+        <td><%= mdl_user.mnethostid %></td>
+        <td><%= mdl_user.username %></td>
+        <td><%= mdl_user.password %></td>
+        <td><%= mdl_user.idnumber %></td>
+        <td><%= mdl_user.firstname %></td>
+        <td><%= mdl_user.lastname %></td>
+        <td><%= mdl_user.email %></td>
+        <td><%= mdl_user.emailstop %></td>
+        <td><%= mdl_user.icq %></td>
+        <td><%= mdl_user.skype %></td>
+        <td><%= mdl_user.yahoo %></td>
+        <td><%= mdl_user.aim %></td>
+        <td><%= mdl_user.msn %></td>
+        <td><%= mdl_user.phone1 %></td>
+        <td><%= mdl_user.phone2 %></td>
+        <td><%= mdl_user.institution %></td>
+        <td><%= mdl_user.department %></td>
+        <td><%= mdl_user.address %></td>
+        <td><%= mdl_user.city %></td>
+        <td><%= mdl_user.country %></td>
+        <td><%= mdl_user.lang %></td>
+        <td><%= mdl_user.calendartype %></td>
+        <td><%= mdl_user.theme %></td>
+        <td><%= mdl_user.timezone %></td>
+        <td><%= mdl_user.firstaccess %></td>
+        <td><%= mdl_user.lastaccess %></td>
+        <td><%= mdl_user.lastlogin %></td>
+        <td><%= mdl_user.currentlogin %></td>
+        <td><%= mdl_user.lastip %></td>
+        <td><%= mdl_user.secret %></td>
+        <td><%= mdl_user.picture %></td>
+        <td><%= mdl_user.url %></td>
+        <td><%= mdl_user.description %></td>
+        <td><%= mdl_user.descriptionformat %></td>
+        <td><%= mdl_user.mailformat %></td>
+        <td><%= mdl_user.maildigest %></td>
+        <td><%= mdl_user.maildisplay %></td>
+        <td><%= mdl_user.autosubscribe %></td>
+        <td><%= mdl_user.trackforums %></td>
+        <td><%= mdl_user.timecreated %></td>
+        <td><%= mdl_user.timemodified %></td>
+        <td><%= mdl_user.trustbitmask %></td>
+        <td><%= mdl_user.imagealt %></td>
+        <td><%= mdl_user.lastnamephonetic %></td>
+        <td><%= mdl_user.firstnamephonetic %></td>
+        <td><%= mdl_user.middlename %></td>
+        <td><%= mdl_user.alternatename %></td>
+        <td><%= link_to 'Show', mdl_user %></td>
+        <td><%= link_to 'Edit', edit_mdl_user_path(mdl_user) %></td>
+        <td><%= link_to 'Destroy', mdl_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mdl User', new_mdl_user_path %>

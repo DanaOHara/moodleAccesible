@@ -1,0 +1,277 @@
+<%= form_for(mdl_user) do |f| %>
+  <% if mdl_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mdl_user.errors.count, "error") %> prohibited this mdl_user from being saved:</h2>
+
+      <ul>
+      <% mdl_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :auth %>
+    <%= f.text_field :auth %>
+  </div>
+
+  <div class="field">
+    <%= f.label :confirmed %>
+    <%= f.check_box :confirmed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :policyagreed %>
+    <%= f.check_box :policyagreed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deleted %>
+    <%= f.check_box :deleted %>
+  </div>
+
+  <div class="field">
+    <%= f.label :suspended %>
+    <%= f.check_box :suspended %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mnethostid %>
+    <%= f.text_field :mnethostid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :idnumber %>
+    <%= f.text_field :idnumber %>
+  </div>
+
+  <div class="field">
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :emailstop %>
+    <%= f.check_box :emailstop %>
+  </div>
+
+  <div class="field">
+    <%= f.label :icq %>
+    <%= f.text_field :icq %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skype %>
+    <%= f.text_field :skype %>
+  </div>
+
+  <div class="field">
+    <%= f.label :yahoo %>
+    <%= f.text_field :yahoo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :aim %>
+    <%= f.text_field :aim %>
+  </div>
+
+  <div class="field">
+    <%= f.label :msn %>
+    <%= f.text_field :msn %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone1 %>
+    <%= f.text_field :phone1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone2 %>
+    <%= f.text_field :phone2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :institution %>
+    <%= f.text_field :institution %>
+  </div>
+
+  <div class="field">
+    <%= f.label :department %>
+    <%= f.text_field :department %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lang %>
+    <%= f.text_field :lang %>
+  </div>
+
+  <div class="field">
+    <%= f.label :calendartype %>
+    <%= f.text_field :calendartype %>
+  </div>
+
+  <div class="field">
+    <%= f.label :theme %>
+    <%= f.text_field :theme %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timezone %>
+    <%= f.text_field :timezone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :firstaccess %>
+    <%= f.text_field :firstaccess %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastaccess %>
+    <%= f.text_field :lastaccess %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastlogin %>
+    <%= f.text_field :lastlogin %>
+  </div>
+
+  <div class="field">
+    <%= f.label :currentlogin %>
+    <%= f.text_field :currentlogin %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastip %>
+    <%= f.text_field :lastip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :secret %>
+    <%= f.text_field :secret %>
+  </div>
+
+  <div class="field">
+    <%= f.label :picture %>
+    <%= f.text_field :picture %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descriptionformat %>
+    <%= f.number_field :descriptionformat %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mailformat %>
+    <%= f.check_box :mailformat %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maildigest %>
+    <%= f.check_box :maildigest %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maildisplay %>
+    <%= f.number_field :maildisplay %>
+  </div>
+
+  <div class="field">
+    <%= f.label :autosubscribe %>
+    <%= f.check_box :autosubscribe %>
+  </div>
+
+  <div class="field">
+    <%= f.label :trackforums %>
+    <%= f.check_box :trackforums %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timecreated %>
+    <%= f.text_field :timecreated %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timemodified %>
+    <%= f.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= f.label :trustbitmask %>
+    <%= f.text_field :trustbitmask %>
+  </div>
+
+  <div class="field">
+    <%= f.label :imagealt %>
+    <%= f.text_field :imagealt %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastnamephonetic %>
+    <%= f.text_field :lastnamephonetic %>
+  </div>
+
+  <div class="field">
+    <%= f.label :firstnamephonetic %>
+    <%= f.text_field :firstnamephonetic %>
+  </div>
+
+  <div class="field">
+    <%= f.label :middlename %>
+    <%= f.text_field :middlename %>
+  </div>
+
+  <div class="field">
+    <%= f.label :alternatename %>
+    <%= f.text_field :alternatename %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
