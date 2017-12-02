@@ -1,0 +1,72 @@
+<%= form_for(mdl_forum_discussion) do |f| %>
+  <% if mdl_forum_discussion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mdl_forum_discussion.errors.count, "error") %> prohibited this mdl_forum_discussion from being saved:</h2>
+
+      <ul>
+      <% mdl_forum_discussion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :course %>
+    <%= f.text_field :course %>
+  </div>
+
+  <div class="field">
+    <%= f.label :forum %>
+    <%= f.text_field :forum %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :firstpost %>
+    <%= f.text_field :firstpost %>
+  </div>
+
+  <div class="field">
+    <%= f.label :userid %>
+    <%= f.text_field :userid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :groupid %>
+    <%= f.text_field :groupid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :assessed %>
+    <%= f.check_box :assessed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timemodified %>
+    <%= f.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= f.label :usermodified %>
+    <%= f.text_field :usermodified %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timestart %>
+    <%= f.text_field :timestart %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timeend %>
+    <%= f.text_field :timeend %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

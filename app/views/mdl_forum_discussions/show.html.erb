@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @mdl_forum_discussion.course %>
+</p>
+
+<p>
+  <strong>Forum:</strong>
+  <%= @mdl_forum_discussion.forum %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mdl_forum_discussion.name %>
+</p>
+
+<p>
+  <strong>Firstpost:</strong>
+  <%= @mdl_forum_discussion.firstpost %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @mdl_forum_discussion.userid %>
+</p>
+
+<p>
+  <strong>Groupid:</strong>
+  <%= @mdl_forum_discussion.groupid %>
+</p>
+
+<p>
+  <strong>Assessed:</strong>
+  <%= @mdl_forum_discussion.assessed %>
+</p>
+
+<p>
+  <strong>Timemodified:</strong>
+  <%= @mdl_forum_discussion.timemodified %>
+</p>
+
+<p>
+  <strong>Usermodified:</strong>
+  <%= @mdl_forum_discussion.usermodified %>
+</p>
+
+<p>
+  <strong>Timestart:</strong>
+  <%= @mdl_forum_discussion.timestart %>
+</p>
+
+<p>
+  <strong>Timeend:</strong>
+  <%= @mdl_forum_discussion.timeend %>
+</p>
+
+<%= link_to 'Edit', edit_mdl_forum_discussion_path(@mdl_forum_discussion) %> |
+<%= link_to 'Back', mdl_forum_discussions_path %>
