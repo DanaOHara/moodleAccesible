@@ -1,0 +1,2 @@
+module MdlForumPostsHelper
+end

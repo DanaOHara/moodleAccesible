@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mdl_forum_posts
   resources :mdl_forum_discussions
   resources :mdl_forums
   resources :mdl_courses

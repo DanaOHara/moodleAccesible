@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mdl Forum Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Discussion</th>
+      <th>Parent</th>
+      <th>Userid</th>
+      <th>Created</th>
+      <th>Modified</th>
+      <th>Mailed</th>
+      <th>Subject</th>
+      <th>Message</th>
+      <th>Messageformat</th>
+      <th>Messagetrust</th>
+      <th>Attachment</th>
+      <th>Totalscore</th>
+      <th>Mailnow</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mdl_forum_posts.each do |mdl_forum_post| %>
+      <tr>
+        <td><%= mdl_forum_post.discussion %></td>
+        <td><%= mdl_forum_post.parent %></td>
+        <td><%= mdl_forum_post.userid %></td>
+        <td><%= mdl_forum_post.created %></td>
+        <td><%= mdl_forum_post.modified %></td>
+        <td><%= mdl_forum_post.mailed %></td>
+        <td><%= mdl_forum_post.subject %></td>
+        <td><%= mdl_forum_post.message %></td>
+        <td><%= mdl_forum_post.messageformat %></td>
+        <td><%= mdl_forum_post.messagetrust %></td>
+        <td><%= mdl_forum_post.attachment %></td>
+        <td><%= mdl_forum_post.totalscore %></td>
+        <td><%= mdl_forum_post.mailnow %></td>
+        <td><%= link_to 'Show', mdl_forum_post %></td>
+        <td><%= link_to 'Edit', edit_mdl_forum_post_path(mdl_forum_post) %></td>
+        <td><%= link_to 'Destroy', mdl_forum_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mdl Forum Post', new_mdl_forum_post_path %>

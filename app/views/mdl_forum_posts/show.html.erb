@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Discussion:</strong>
+  <%= @mdl_forum_post.discussion %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @mdl_forum_post.parent %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @mdl_forum_post.userid %>
+</p>
+
+<p>
+  <strong>Created:</strong>
+  <%= @mdl_forum_post.created %>
+</p>
+
+<p>
+  <strong>Modified:</strong>
+  <%= @mdl_forum_post.modified %>
+</p>
+
+<p>
+  <strong>Mailed:</strong>
+  <%= @mdl_forum_post.mailed %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @mdl_forum_post.subject %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @mdl_forum_post.message %>
+</p>
+
+<p>
+  <strong>Messageformat:</strong>
+  <%= @mdl_forum_post.messageformat %>
+</p>
+
+<p>
+  <strong>Messagetrust:</strong>
+  <%= @mdl_forum_post.messagetrust %>
+</p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= @mdl_forum_post.attachment %>
+</p>
+
+<p>
+  <strong>Totalscore:</strong>
+  <%= @mdl_forum_post.totalscore %>
+</p>
+
+<p>
+  <strong>Mailnow:</strong>
+  <%= @mdl_forum_post.mailnow %>
+</p>
+
+<%= link_to 'Edit', edit_mdl_forum_post_path(@mdl_forum_post) %> |
+<%= link_to 'Back', mdl_forum_posts_path %>
