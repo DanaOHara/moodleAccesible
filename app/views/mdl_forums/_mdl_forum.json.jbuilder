@@ -1,0 +1,2 @@
+json.extract! mdl_forum, :id, :course, :name, :intro, :introformat, :assessed, :assesstimestart, :assesstimefinish, :scale, :maxbytes, :maxattachments, :forcesubscribe, :trackingtype, :rsstype, :rssarticles, :timemodified, :warnafter, :blockafter, :blockperiod, :completiondiscussions, :completionreplies, :completionposts, :displaywordcount, :created_at, :updated_at
+json.url mdl_forum_url(mdl_forum, format: :json)

@@ -1,0 +1,127 @@
+<%= form_for(mdl_forum) do |f| %>
+  <% if mdl_forum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mdl_forum.errors.count, "error") %> prohibited this mdl_forum from being saved:</h2>
+
+      <ul>
+      <% mdl_forum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :course %>
+    <%= f.text_field :course %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :intro %>
+    <%= f.text_area :intro %>
+  </div>
+
+  <div class="field">
+    <%= f.label :introformat %>
+    <%= f.number_field :introformat %>
+  </div>
+
+  <div class="field">
+    <%= f.label :assessed %>
+    <%= f.text_field :assessed %>
+  </div>
+
+  <div class="field">
+    <%= f.label :assesstimestart %>
+    <%= f.text_field :assesstimestart %>
+  </div>
+
+  <div class="field">
+    <%= f.label :assesstimefinish %>
+    <%= f.text_field :assesstimefinish %>
+  </div>
+
+  <div class="field">
+    <%= f.label :scale %>
+    <%= f.text_field :scale %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maxbytes %>
+    <%= f.text_field :maxbytes %>
+  </div>
+
+  <div class="field">
+    <%= f.label :maxattachments %>
+    <%= f.text_field :maxattachments %>
+  </div>
+
+  <div class="field">
+    <%= f.label :forcesubscribe %>
+    <%= f.check_box :forcesubscribe %>
+  </div>
+
+  <div class="field">
+    <%= f.label :trackingtype %>
+    <%= f.number_field :trackingtype %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rsstype %>
+    <%= f.number_field :rsstype %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rssarticles %>
+    <%= f.number_field :rssarticles %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timemodified %>
+    <%= f.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= f.label :warnafter %>
+    <%= f.text_field :warnafter %>
+  </div>
+
+  <div class="field">
+    <%= f.label :blockafter %>
+    <%= f.text_field :blockafter %>
+  </div>
+
+  <div class="field">
+    <%= f.label :blockperiod %>
+    <%= f.text_field :blockperiod %>
+  </div>
+
+  <div class="field">
+    <%= f.label :completiondiscussions %>
+    <%= f.number_field :completiondiscussions %>
+  </div>
+
+  <div class="field">
+    <%= f.label :completionreplies %>
+    <%= f.number_field :completionreplies %>
+  </div>
+
+  <div class="field">
+    <%= f.label :completionposts %>
+    <%= f.number_field :completionposts %>
+  </div>
+
+  <div class="field">
+    <%= f.label :displaywordcount %>
+    <%= f.check_box :displaywordcount %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

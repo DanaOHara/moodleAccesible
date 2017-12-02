@@ -1284,7 +1284,6 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "mdl_forum", id: :bigint, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", comment: "Forums contain and structure discussion" do |t|
     t.bigint  "course",                                   default: 0,         null: false
-    t.string  "type",                  limit: 20,         default: "general", null: false
     t.string  "name",                                     default: "",        null: false
     t.text    "intro",                 limit: 4294967295,                     null: false
     t.integer "introformat",           limit: 2,          default: 0,         null: false
