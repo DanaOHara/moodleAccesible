@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mdl Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Courseid</th>
+      <th>Groupid</th>
+      <th>Userid</th>
+      <th>Repeatid</th>
+      <th>Modulename</th>
+      <th>Instance</th>
+      <th>Eventtype</th>
+      <th>Timestart</th>
+      <th>Timeduration</th>
+      <th>Visible</th>
+      <th>Uuid</th>
+      <th>Sequence</th>
+      <th>Timemodified</th>
+      <th>Subscriptionid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mdl_events.each do |mdl_event| %>
+      <tr>
+        <td><%= mdl_event.name %></td>
+        <td><%= mdl_event.description %></td>
+        <td><%= mdl_event.format %></td>
+        <td><%= mdl_event.courseid %></td>
+        <td><%= mdl_event.groupid %></td>
+        <td><%= mdl_event.userid %></td>
+        <td><%= mdl_event.repeatid %></td>
+        <td><%= mdl_event.modulename %></td>
+        <td><%= mdl_event.instance %></td>
+        <td><%= mdl_event.eventtype %></td>
+        <td><%= mdl_event.timestart %></td>
+        <td><%= mdl_event.timeduration %></td>
+        <td><%= mdl_event.visible %></td>
+        <td><%= mdl_event.uuid %></td>
+        <td><%= mdl_event.sequence %></td>
+        <td><%= mdl_event.timemodified %></td>
+        <td><%= mdl_event.subscriptionid %></td>
+        <td><%= link_to 'Show', mdl_event %></td>
+        <td><%= link_to 'Edit', edit_mdl_event_path(mdl_event) %></td>
+        <td><%= link_to 'Destroy', mdl_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mdl Event', new_mdl_event_path %>

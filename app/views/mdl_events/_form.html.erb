@@ -1,0 +1,102 @@
+<%= form_for(mdl_event) do |f| %>
+  <% if mdl_event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mdl_event.errors.count, "error") %> prohibited this mdl_event from being saved:</h2>
+
+      <ul>
+      <% mdl_event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_area :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :format %>
+    <%= f.number_field :format %>
+  </div>
+
+  <div class="field">
+    <%= f.label :courseid %>
+    <%= f.text_field :courseid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :groupid %>
+    <%= f.text_field :groupid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :userid %>
+    <%= f.text_field :userid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :repeatid %>
+    <%= f.text_field :repeatid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :modulename %>
+    <%= f.text_field :modulename %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instance %>
+    <%= f.text_field :instance %>
+  </div>
+
+  <div class="field">
+    <%= f.label :eventtype %>
+    <%= f.text_field :eventtype %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timestart %>
+    <%= f.text_field :timestart %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timeduration %>
+    <%= f.text_field :timeduration %>
+  </div>
+
+  <div class="field">
+    <%= f.label :visible %>
+    <%= f.number_field :visible %>
+  </div>
+
+  <div class="field">
+    <%= f.label :uuid %>
+    <%= f.text_field :uuid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sequence %>
+    <%= f.text_field :sequence %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timemodified %>
+    <%= f.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subscriptionid %>
+    <%= f.text_field :subscriptionid %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
