@@ -21,6 +21,17 @@ class MdlForumDiscussionsController < ApplicationController
   def edit
   end
 
+  def obtenerDiscusionesPorForo
+
+  @mdl_forum_discussions = MdlForumDiscussion.where("forum = ?", params[:forum])
+  return render json: @mdl_forum_discussions
+
+  end
+
+
+
+
+
   # POST /mdl_forum_discussions
   # POST /mdl_forum_discussions.json
   def create

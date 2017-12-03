@@ -4,8 +4,16 @@ class MdlForumsController < ApplicationController
   # GET /mdl_forums
   # GET /mdl_forums.json
   def index
-    @mdl_forums = MdlForum.all
+    @mdl_forums = MdlForum
   end
+
+  def obtenerForosPorCurso
+
+    @mdl_forums = MdlForum.where("course = ?", params[:course])
+    return render json: @mdl_forums
+
+  end
+
 
   # GET /mdl_forums/1
   # GET /mdl_forums/1.json
