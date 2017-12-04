@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :mdl_contexts
+  resources :mdl_role_assignments
   root 'welcome#index'
 
   resources :mdl_events

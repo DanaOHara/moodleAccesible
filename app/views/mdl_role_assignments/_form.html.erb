@@ -1,0 +1,57 @@
+<%= form_for(mdl_role_assignment) do |f| %>
+  <% if mdl_role_assignment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mdl_role_assignment.errors.count, "error") %> prohibited this mdl_role_assignment from being saved:</h2>
+
+      <ul>
+      <% mdl_role_assignment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :roleid %>
+    <%= f.text_field :roleid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contextid %>
+    <%= f.text_field :contextid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :userid %>
+    <%= f.text_field :userid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timemodified %>
+    <%= f.text_field :timemodified %>
+  </div>
+
+  <div class="field">
+    <%= f.label :modifierid %>
+    <%= f.text_field :modifierid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :component %>
+    <%= f.text_field :component %>
+  </div>
+
+  <div class="field">
+    <%= f.label :itemid %>
+    <%= f.text_field :itemid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sortorder %>
+    <%= f.text_field :sortorder %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

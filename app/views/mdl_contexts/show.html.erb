@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Contextlevel:</strong>
+  <%= @mdl_context.contextlevel %>
+</p>
+
+<p>
+  <strong>Instanceid:</strong>
+  <%= @mdl_context.instanceid %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @mdl_context.path %>
+</p>
+
+<p>
+  <strong>Depth:</strong>
+  <%= @mdl_context.depth %>
+</p>
+
+<%= link_to 'Edit', edit_mdl_context_path(@mdl_context) %> |
+<%= link_to 'Back', mdl_contexts_path %>

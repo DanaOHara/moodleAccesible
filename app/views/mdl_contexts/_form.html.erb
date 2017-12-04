@@ -1,0 +1,37 @@
+<%= form_for(mdl_context) do |f| %>
+  <% if mdl_context.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mdl_context.errors.count, "error") %> prohibited this mdl_context from being saved:</h2>
+
+      <ul>
+      <% mdl_context.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contextlevel %>
+    <%= f.text_field :contextlevel %>
+  </div>
+
+  <div class="field">
+    <%= f.label :instanceid %>
+    <%= f.text_field :instanceid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :path %>
+    <%= f.text_field :path %>
+  </div>
+
+  <div class="field">
+    <%= f.label :depth %>
+    <%= f.number_field :depth %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
