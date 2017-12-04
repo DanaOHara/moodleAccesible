@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
 
 get 'mdl_users/', to: 'mdl_users#index'
+get 'mdl_users/loginBase', to: 'mdl_users#loginBase'
 
   get 'mdl_forums/obtenerForosPorCurso/:course', to: 'mdl_forums#obtenerForosPorCurso'
   get 'mdl_forum_discussions/obtenerDiscusionesPorForo/:forum', to: 'mdl_forum_discussions#obtenerDiscusionesPorForo'

@@ -1,5 +1,5 @@
 class MdlUsersController < ApplicationController
-  before_action :set_mdl_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_mdl_user, only: [ :edit, :update, :destroy]
 
   # GET /mdl_users
   # GET /mdl_users.json
@@ -11,6 +11,7 @@ class MdlUsersController < ApplicationController
   # GET /mdl_users/1
   # GET /mdl_users/1.json
   def show
+    @mdl_users = MdlUser.all
   end
 
   # GET /mdl_users/new
@@ -22,9 +23,6 @@ class MdlUsersController < ApplicationController
   def edit
   end
 
-def loginBase
-@mdl_user = MdlUser.where("Email = ? AND Password = ?", params[email],params[password])
-end
   # POST /mdl_users
   # POST /mdl_users.json
   def create

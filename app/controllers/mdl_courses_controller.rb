@@ -5,9 +5,15 @@ class MdlCoursesController < ApplicationController
   # GET /mdl_courses.json
   def index
     @terminoABuscar = params[:terminoABuscar]
-    @mdl_courses = MdlCourse.where(:fullname => @terminoABuscar)
+    @mdl_course = MdlCourse.where(:fullname => @terminoABuscar)
   end
 
+
+def buscarCursosPorIdeUsuario
+
+@mdl_courses = MdlCourse.select("fullname").from()
+
+end
   # GET /mdl_courses/1
   # GET /mdl_courses/1.json
   def show
