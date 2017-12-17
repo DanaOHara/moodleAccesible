@@ -12,6 +12,14 @@ class MdlEventsController < ApplicationController
   def show
   end
 
+  def eventosPorCurso
+    @mdl_events = MdlEvent.where("courseid = ?", params[:courseid])
+    return render json: @mdl_events
+  end
+
+
+
+
   # GET /mdl_events/new
   def new
     @mdl_event = MdlEvent.new

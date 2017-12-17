@@ -10,7 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20171204173817) do
+
+  create_table "commontator_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string   "creator_type"
+    t.integer  "creator_id"
+    t.string   "editor_type"
+    t.integer  "editor_id"
+    t.integer  "thread_id",                                   null: false
+    t.text     "body",              limit: 65535,             null: false
+    t.datetime "deleted_at"
+    t.integer  "cached_votes_up",                 default: 0
+    t.integer  "cached_votes_down",               default: 0
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.index ["cached_votes_down"], name: "index_commontator_comments_on_cached_votes_down", using: :btree
+    t.index ["cached_votes_up"], name: "index_commontator_comments_on_cached_votes_up", using: :btree
+    t.index ["creator_id", "creator_type", "thread_id"], name: "index_commontator_comments_on_c_id_and_c_type_and_t_id", using: :btree
+    t.index ["thread_id", "created_at"], name: "index_commontator_comments_on_thread_id_and_created_at", using: :btree
+  end
+
+  create_table "commontator_subscriptions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string   "subscriber_type", null: false
+    t.integer  "subscriber_id",   null: false
+    t.integer  "thread_id",       null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["subscriber_id", "subscriber_type", "thread_id"], name: "index_commontator_subscriptions_on_s_id_and_s_type_and_t_id", unique: true, using: :btree
+    t.index ["thread_id"], name: "index_commontator_subscriptions_on_thread_id", using: :btree
+  end
+
+  create_table "commontator_threads", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string   "commontable_type"
+    t.integer  "commontable_id"
+    t.datetime "closed_at"
+    t.string   "closer_type"
+    t.integer  "closer_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["commontable_id", "commontable_type"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true, using: :btree
+  end
 
   create_table "mdl_assign", id: :bigint, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", comment: "This table saves information about an instance of mod_assign" do |t|
     t.bigint  "course",                                         default: 0,      null: false
@@ -1284,6 +1323,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "mdl_forum", id: :bigint, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", comment: "Forums contain and structure discussion" do |t|
     t.bigint  "course",                                   default: 0,         null: false
+    t.string  "type",                  limit: 20,         default: "general", null: false
     t.string  "name",                                     default: "",        null: false
     t.text    "intro",                 limit: 4294967295,                     null: false
     t.integer "introformat",           limit: 2,          default: 0,         null: false

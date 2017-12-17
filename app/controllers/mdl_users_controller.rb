@@ -5,15 +5,21 @@ class MdlUsersController < ApplicationController
   # GET /mdl_users.json
 
   def index
-    @mdl_users = MdlUser.all
+    @mdl_users = MdlUser.select(:id).where("email = ?", params[:email]).where("password = ?", params[:password])
+
   end
 
   # GET /mdl_users/1
   # GET /mdl_users/1.json
   def show
-    @mdl_users = MdlUser.all
+    @mdl_users = MdlUser.where("email = ?", params[:email])
   end
 
+
+def loginProvisional
+@mdl_users = MdlUser.select(:id).where("email = ? AND password = ?", params[:email],params[:password])
+return render json: @mdl_users
+end
   # GET /mdl_users/new
   def new
     @mdl_user = MdlUser.new
@@ -22,6 +28,14 @@ class MdlUsersController < ApplicationController
   # GET /mdl_users/1/edit
   def edit
   end
+
+  def loginBaseFuncion
+@mdl_users = MdlUser.where("email = ?", params[:email])
+
+  end
+
+
+
 
   # POST /mdl_users
   # POST /mdl_users.json

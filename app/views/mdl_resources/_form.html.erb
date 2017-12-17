@@ -1,0 +1,77 @@
+<%= form_for(mdl_resource) do |f| %>
+  <% if mdl_resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mdl_resource.errors.count, "error") %> prohibited this mdl_resource from being saved:</h2>
+
+      <ul>
+      <% mdl_resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :course %>
+    <%= f.text_field :course %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :intro %>
+    <%= f.text_area :intro %>
+  </div>
+
+  <div class="field">
+    <%= f.label :introformat %>
+    <%= f.number_field :introformat %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tobemigrated %>
+    <%= f.number_field :tobemigrated %>
+  </div>
+
+  <div class="field">
+    <%= f.label :legacyfiles %>
+    <%= f.number_field :legacyfiles %>
+  </div>
+
+  <div class="field">
+    <%= f.label :legacyfileslast %>
+    <%= f.text_field :legacyfileslast %>
+  </div>
+
+  <div class="field">
+    <%= f.label :display %>
+    <%= f.number_field :display %>
+  </div>
+
+  <div class="field">
+    <%= f.label :displayoptions %>
+    <%= f.text_area :displayoptions %>
+  </div>
+
+  <div class="field">
+    <%= f.label :filterfiles %>
+    <%= f.number_field :filterfiles %>
+  </div>
+
+  <div class="field">
+    <%= f.label :revision %>
+    <%= f.text_field :revision %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timemodified %>
+    <%= f.text_field :timemodified %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

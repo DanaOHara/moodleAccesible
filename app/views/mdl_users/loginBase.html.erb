@@ -16,7 +16,7 @@
         <label for="email">Ingresa tu contraseña de usuario del correo usach</label>
 
         <label for="email">
-          <h3>Contraseña:</h3>
+          <h2>Contraseña:</h2>
         </label>
 
         <input type="password" class="form-control input-lg" id="pass" name="pass">
@@ -27,7 +27,32 @@
 
         <h1></h1>
 
-        <%= button_to 'Olvide mi contraseña', mdl_users_loginBase_path , method: :get , class: 'btn btn-primary btn-lg  btn-block' %>
+        <p id="notice"><%= notice %></p>
+
+        <h1>Mdl Courses</h1>
+
+        <table>
+          <thead>
+            <tr>
+
+              <th>email</th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @mdl_courses.each do |mdl_course| %>
+              <tr>
+                <td><%= mdl_course.fullname %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <br>
+
+
+
 
         <h1></h1>
 

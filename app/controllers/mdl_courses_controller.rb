@@ -9,9 +9,10 @@ class MdlCoursesController < ApplicationController
   end
 
 
+
 def buscarCursosPorIdeUsuario
 
-@mdl_courses = MdlCourse.select("fullname").from()
+@mdl_courses = MdlCourse.joins("")
 
 end
   # GET /mdl_courses/1

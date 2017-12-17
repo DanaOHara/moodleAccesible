@@ -3,8 +3,12 @@ class MdlContextsController < ApplicationController
 
   # GET /mdl_contexts
   # GET /mdl_contexts.json
-  def index
-    @mdl_contexts = MdlContext.all
+  def obetenerCursosPorIdUsuario
+    @mdl_contexts = MdlContext.select(:fullname).joins(" INNER JOIN mdl_role_assignments  ra ON  ra.contextid =  mdl_context.id INNER JOIN mdl_course co ON co.id = mdl_context.instanceid" ).where("ra.userid = ? ", params[:userid])
+  return render json: @mdl_contexts
+
+
+
   end
 
   # GET /mdl_contexts/1
@@ -17,7 +21,7 @@ class MdlContextsController < ApplicationController
     @mdl_context = MdlContext.new
   end
 
-  # GET /mdl_contexts/1/edit
+  # GET /mdl_contexts/1/editINNER JOIN
   def edit
   end
 

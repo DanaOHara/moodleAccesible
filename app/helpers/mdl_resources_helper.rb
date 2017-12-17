@@ -1,0 +1,2 @@
+module MdlResourcesHelper
+end
