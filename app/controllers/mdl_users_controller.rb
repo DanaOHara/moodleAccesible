@@ -1,5 +1,5 @@
 class MdlUsersController < ApplicationController
-  before_action :set_mdl_user, only: [ :edit, :update, :destroy]
+  before_action :set_mdl_user, only: [ :edit, :update, :destroy,]
 
   # GET /mdl_users
   # GET /mdl_users.json
@@ -16,10 +16,33 @@ class MdlUsersController < ApplicationController
   end
 
 
-def loginProvisional
-@mdl_users = MdlUser.select(:id).where("email = ? AND password = ?", params[:email],params[:password])
-return render json: @mdl_users
-end
+  def emailErroneo
+
+    redirect_to :action =>"emailErroneo"
+
+  end
+
+
+
+
+  def verifEmail
+
+
+  @mdl_user = MdlUser.exists?(email: params[:email].concat("@usach.cl"))
+
+
+    if @mdl_user == false
+
+    render :action =>"emailErroneo"
+
+    else
+
+    render json: @mdl_user
+
+    end
+  end
+
+
   # GET /mdl_users/new
   def new
     @mdl_user = MdlUser.new
@@ -29,10 +52,6 @@ end
   def edit
   end
 
-  def loginBaseFuncion
-@mdl_users = MdlUser.where("email = ?", params[:email])
-
-  end
 
 
 

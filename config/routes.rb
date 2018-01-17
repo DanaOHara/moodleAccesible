@@ -15,15 +15,14 @@ Rails.application.routes.draw do
 
 get 'mdl_events/eventosPorCurso/:courseid', to: 'mdl_events#eventosPorCurso'
 get 'mdl_users/', to: 'mdl_users#index'
-get 'mdl_users/loginBase', to: 'mdl_users#loginBase'
 
-get 'mdl_users/loginBaseFuncion/', to: 'mdl_users#loginBaseFuncion'
   get 'mdl_forums/obtenerForosPorCurso/:course', to: 'mdl_forums#obtenerForosPorCurso'
   get 'mdl_forum_discussions/obtenerDiscusionesPorForo/:forum', to: 'mdl_forum_discussions#obtenerDiscusionesPorForo'
   get 'mdl_forums_posts/obtenerPostPorDiscusionPrincipal/:discussion', to: 'mdl_forum_posts#obtenerPostPorDiscusionPrincipal'
   get 'mdl_forums_posts/oobetenerCursosPorIdUsuariobtenerPostRespuestas/:discussion/', to: 'mdl_forum_posts#obtenerPostRespuestas'
   get 'mdl_resources/obtenerRecursosPorCurso/:course', to: 'mdl_resources#obtenerRecursosPorCurso'
   get 'mdl_contexts/obetenerCursosPorIdUsuario/:userid', to: 'mdl_contexts#obetenerCursosPorIdUsuario'
-  post 'mdl_users/loginProvisional', to: 'mdl_users#loginProvisional'
 
+  post 'mdl_users/verifEmail', to: 'mdl_users#verifEmail'
+  get 'mdl_users/emailErroneo', to: 'mdl_users#emailErroneo'
 end
