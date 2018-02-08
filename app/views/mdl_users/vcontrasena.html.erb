@@ -1,4 +1,4 @@
-<%= form_tag(controller: "mdl_users", action: "verifEmail", method: "post") do |f| %>
+<%= form_tag(controller: "mdl_users", action: "vcontrasena", method: "post") do |f| %>
 
 
 <link rel="stylesheet" href="style.css">
@@ -15,24 +15,24 @@
     <div id="panelLoginInterior" class="panel panel-default">
 
 
-      <div class="panel-heading"><h1><%= label_tag(:email, "Ingreso") %></h1></div>
+      <div class="panel-heading"><h1><%= label_tag(:contrasena, "Ingreso") %></h1></div>
 
 
 
        <div class="panel-body">
 
-         <div class="col-lg-12"><h2> Ingresa tu correo Usach</h2></div>
+         <div class="col-lg-12"><h2> Ingresa tu contraseña del correo Usach</h2></div>
 
 
 
         <h1> </h1>
 
-             <div class="col-lg-12"><h1> <%= text_field_tag :email%></h1></div>
+             <div class="col-lg-12"><h1> <%= text_field_tag :contrasena%></h1></div>
 
             <h1> </h1>
 
-         <%= submit_tag "Siguiente", class: 'btn btn-primary btn-lg  btn-block' %>
-
+         <%= submit_tag "Ingresar", class: 'btn btn-primary btn-lg  btn-block' %>
+         <%= submit_tag "Olvide mi contraseña", class: 'btn btn-primary btn-lg  btn-block' %>
       <h1> </h1>
          </div>
        </div>

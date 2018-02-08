@@ -25,22 +25,54 @@ class MdlUsersController < ApplicationController
 
 
 
-  def verifEmail
+  def vcontrasena
+
+  @mdl_users = MdlUser.select(:id).where("password = ?", params[:contrasena])
 
 
-  @mdl_user = MdlUser.exists?(email: params[:email].concat("@usach.cl"))
+    if @mdl_users == "null"
 
-
-    if @mdl_user == false
-
-    render :action =>"emailErroneo"
+    redirect_to :action =>"emailErroneo"
 
     else
 
-    render json: @mdl_user
+    render json: @mdl_users
 
     end
+
   end
+
+
+
+
+
+
+
+
+
+
+  def verifEmail
+
+@mdl_user = MdlUser.select(:password).where("id = 1 ")
+
+render json:  @mdl_user.valid_password?(params[:email])
+
+end
+
+
+#  @mdl_user = MdlUser.exists?(email: params[:email].concat("@usach.cl"))
+
+
+#    if @mdl_user == false
+
+#    render :action =>"emailErroneo"
+
+#    else
+
+#    render :action =>"vcontrasena"
+
+#    end
+# end
 
 
   # GET /mdl_users/new

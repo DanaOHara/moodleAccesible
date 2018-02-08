@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :installs
   devise_for :mdl_users
   resources :mdl_resources
   resources :mdl_contexts
@@ -25,4 +26,5 @@ get 'mdl_users/', to: 'mdl_users#index'
 
   post 'mdl_users/verifEmail', to: 'mdl_users#verifEmail'
   get 'mdl_users/emailErroneo', to: 'mdl_users#emailErroneo'
+  post 'mdl_users/vcontrasena', to: 'mdl_users#vcontrasena'
 end
