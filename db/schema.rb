@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204173817) do
+ActiveRecord::Schema.define(version: 20180207230841) do
 
   create_table "commontator_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string   "creator_type"
@@ -49,6 +49,23 @@ ActiveRecord::Schema.define(version: 20171204173817) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["commontable_id", "commontable_type"], name: "index_commontator_threads_on_c_id_and_c_type", unique: true, using: :btree
+  end
+
+  create_table "installs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_installs_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "mdl_assign", id: :bigint, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", comment: "This table saves information about an instance of mod_assign" do |t|
@@ -3621,58 +3638,67 @@ ActiveRecord::Schema.define(version: 20171204173817) do
   end
 
   create_table "mdl_user", id: :bigint, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci", comment: "One record for each person" do |t|
-    t.string  "auth",              limit: 20,         default: "manual",    null: false
-    t.boolean "confirmed",                            default: false,       null: false
-    t.boolean "policyagreed",                         default: false,       null: false
-    t.boolean "deleted",                              default: false,       null: false
-    t.boolean "suspended",                            default: false,       null: false
-    t.bigint  "mnethostid",                           default: 0,           null: false
-    t.string  "username",          limit: 100,        default: "",          null: false
-    t.string  "password",                             default: "",          null: false
-    t.string  "idnumber",                             default: "",          null: false
-    t.string  "firstname",         limit: 100,        default: "",          null: false
-    t.string  "lastname",          limit: 100,        default: "",          null: false
-    t.string  "email",             limit: 100,        default: "",          null: false
-    t.boolean "emailstop",                            default: false,       null: false
-    t.string  "icq",               limit: 15,         default: "",          null: false
-    t.string  "skype",             limit: 50,         default: "",          null: false
-    t.string  "yahoo",             limit: 50,         default: "",          null: false
-    t.string  "aim",               limit: 50,         default: "",          null: false
-    t.string  "msn",               limit: 50,         default: "",          null: false
-    t.string  "phone1",            limit: 20,         default: "",          null: false
-    t.string  "phone2",            limit: 20,         default: "",          null: false
-    t.string  "institution",                          default: "",          null: false
-    t.string  "department",                           default: "",          null: false
-    t.string  "address",                              default: "",          null: false
-    t.string  "city",              limit: 120,        default: "",          null: false
-    t.string  "country",           limit: 2,          default: "",          null: false
-    t.string  "lang",              limit: 30,         default: "en",        null: false
-    t.string  "calendartype",      limit: 30,         default: "gregorian", null: false
-    t.string  "theme",             limit: 50,         default: "",          null: false
-    t.string  "timezone",          limit: 100,        default: "99",        null: false
-    t.bigint  "firstaccess",                          default: 0,           null: false
-    t.bigint  "lastaccess",                           default: 0,           null: false
-    t.bigint  "lastlogin",                            default: 0,           null: false
-    t.bigint  "currentlogin",                         default: 0,           null: false
-    t.string  "lastip",            limit: 45,         default: "",          null: false
-    t.string  "secret",            limit: 15,         default: "",          null: false
-    t.bigint  "picture",                              default: 0,           null: false
-    t.string  "url",                                  default: "",          null: false
-    t.text    "description",       limit: 4294967295
-    t.integer "descriptionformat", limit: 1,          default: 1,           null: false
-    t.boolean "mailformat",                           default: true,        null: false
-    t.boolean "maildigest",                           default: false,       null: false
-    t.integer "maildisplay",       limit: 1,          default: 2,           null: false
-    t.boolean "autosubscribe",                        default: true,        null: false
-    t.boolean "trackforums",                          default: false,       null: false
-    t.bigint  "timecreated",                          default: 0,           null: false
-    t.bigint  "timemodified",                         default: 0,           null: false
-    t.bigint  "trustbitmask",                         default: 0,           null: false
-    t.string  "imagealt"
-    t.string  "lastnamephonetic"
-    t.string  "firstnamephonetic"
-    t.string  "middlename"
-    t.string  "alternatename"
+    t.string   "auth",                   limit: 20,         default: "manual",    null: false
+    t.boolean  "confirmed",                                 default: false,       null: false
+    t.boolean  "policyagreed",                              default: false,       null: false
+    t.boolean  "deleted",                                   default: false,       null: false
+    t.boolean  "suspended",                                 default: false,       null: false
+    t.bigint   "mnethostid",                                default: 0,           null: false
+    t.string   "username",               limit: 100,        default: "",          null: false
+    t.string   "password",                                  default: "",          null: false
+    t.string   "idnumber",                                  default: "",          null: false
+    t.string   "firstname",              limit: 100,        default: "",          null: false
+    t.string   "lastname",               limit: 100,        default: "",          null: false
+    t.string   "email",                  limit: 100,        default: "",          null: false
+    t.boolean  "emailstop",                                 default: false,       null: false
+    t.string   "icq",                    limit: 15,         default: "",          null: false
+    t.string   "skype",                  limit: 50,         default: "",          null: false
+    t.string   "yahoo",                  limit: 50,         default: "",          null: false
+    t.string   "aim",                    limit: 50,         default: "",          null: false
+    t.string   "msn",                    limit: 50,         default: "",          null: false
+    t.string   "phone1",                 limit: 20,         default: "",          null: false
+    t.string   "phone2",                 limit: 20,         default: "",          null: false
+    t.string   "institution",                               default: "",          null: false
+    t.string   "department",                                default: "",          null: false
+    t.string   "address",                                   default: "",          null: false
+    t.string   "city",                   limit: 120,        default: "",          null: false
+    t.string   "country",                limit: 2,          default: "",          null: false
+    t.string   "lang",                   limit: 30,         default: "en",        null: false
+    t.string   "calendartype",           limit: 30,         default: "gregorian", null: false
+    t.string   "theme",                  limit: 50,         default: "",          null: false
+    t.string   "timezone",               limit: 100,        default: "99",        null: false
+    t.bigint   "firstaccess",                               default: 0,           null: false
+    t.bigint   "lastaccess",                                default: 0,           null: false
+    t.bigint   "lastlogin",                                 default: 0,           null: false
+    t.bigint   "currentlogin",                              default: 0,           null: false
+    t.string   "lastip",                 limit: 45,         default: "",          null: false
+    t.string   "secret",                 limit: 15,         default: "",          null: false
+    t.bigint   "picture",                                   default: 0,           null: false
+    t.string   "url",                                       default: "",          null: false
+    t.text     "description",            limit: 4294967295
+    t.integer  "descriptionformat",      limit: 1,          default: 1,           null: false
+    t.boolean  "mailformat",                                default: true,        null: false
+    t.boolean  "maildigest",                                default: false,       null: false
+    t.integer  "maildisplay",            limit: 1,          default: 2,           null: false
+    t.boolean  "autosubscribe",                             default: true,        null: false
+    t.boolean  "trackforums",                               default: false,       null: false
+    t.bigint   "timecreated",                               default: 0,           null: false
+    t.bigint   "timemodified",                              default: 0,           null: false
+    t.bigint   "trustbitmask",                              default: 0,           null: false
+    t.string   "imagealt"
+    t.string   "lastnamephonetic"
+    t.string   "firstnamephonetic"
+    t.string   "middlename"
+    t.string   "alternatename"
+    t.string   "encrypted_password",                        default: "",          null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                             default: 0,           null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.index ["alternatename"], name: "mdl_user_alt_ix", using: :btree
     t.index ["auth"], name: "mdl_user_aut_ix", using: :btree
     t.index ["city"], name: "mdl_user_cit_ix", using: :btree

@@ -1,5 +1,10 @@
 class MdlUsersController < ApplicationController
+
+
+
   before_action :set_mdl_user, only: [ :edit, :update, :destroy,]
+
+
 
   # GET /mdl_users
   # GET /mdl_users.json
@@ -15,7 +20,6 @@ class MdlUsersController < ApplicationController
     @mdl_users = MdlUser.where("email = ?", params[:email])
   end
 
-
   def emailErroneo
 
     redirect_to :action =>"emailErroneo"
@@ -27,20 +31,18 @@ class MdlUsersController < ApplicationController
 
   def vcontrasena
 
-  @mdl_users = MdlUser.select(:id).where("password = ?", params[:contrasena])
+ user = MdlUser.find_by_email('rosa.munozv@usach.cl')
+
+  if user && user.authenticate(params[:contrasena])
+
+       session[:user_id] = user.id
+       redirect_to '/'
+    render json: user
 
 
-    if @mdl_users == "null"
-
-    redirect_to :action =>"emailErroneo"
-
-    else
-
-    render json: @mdl_users
-
-    end
 
   end
+end
 
 
 
@@ -53,26 +55,25 @@ class MdlUsersController < ApplicationController
 
   def verifEmail
 
-@mdl_user = MdlUser.select(:password).where("id = 1 ")
-
-render json:  @mdl_user.valid_password?(params[:email])
-
-end
+  @mdl_user = MdlUser.select(:id).where("email = ?", params[:email].concat("@usach.cl"))
 
 
-#  @mdl_user = MdlUser.exists?(email: params[:email].concat("@usach.cl"))
 
+   if @mdl_user.nil? == true || @mdl_user.blank? == true
 
-#    if @mdl_user == false
+   render :action =>"emailErroneo"
 
-#    render :action =>"emailErroneo"
+  else
+  # Por ahora la verificacion de la contrasena quedara en suspenso, con un email valido ira a los cursos del alumno
+  # render :action =>"vcontrasena"
+  #@mdl_id = MdlUser.select(:id).where("email = ?", params[:email].concat("@usach.cl"))
+  #render json: @mdl_user
+  redirect_to  controller: 'mdl_contexts', action: 'course', :id => @mdl_user.pluck(:id)
+  #redirect_to url_for(:controller => 'mdl_contexts', :action => 'cursos')
 
-#    else
-
-#    render :action =>"vcontrasena"
-
-#    end
-# end
+   #return @mdl_id
+   end
+ end
 
 
   # GET /mdl_users/new

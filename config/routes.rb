@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :installs
-  devise_for :mdl_users
+
   resources :mdl_resources
   resources :mdl_contexts
   resources :mdl_role_assignments
@@ -20,11 +19,16 @@ get 'mdl_users/', to: 'mdl_users#index'
   get 'mdl_forums/obtenerForosPorCurso/:course', to: 'mdl_forums#obtenerForosPorCurso'
   get 'mdl_forum_discussions/obtenerDiscusionesPorForo/:forum', to: 'mdl_forum_discussions#obtenerDiscusionesPorForo'
   get 'mdl_forums_posts/obtenerPostPorDiscusionPrincipal/:discussion', to: 'mdl_forum_posts#obtenerPostPorDiscusionPrincipal'
-  get 'mdl_forums_posts/oobetenerCursosPorIdUsuariobtenerPostRespuestas/:discussion/', to: 'mdl_forum_posts#obtenerPostRespuestas'
+  get 'mdl_forums_posts/obtenerPostRespuestas/:discussion/', to: 'mdl_forum_posts#obtenerPostRespuestas'
   get 'mdl_resources/obtenerRecursosPorCurso/:course', to: 'mdl_resources#obtenerRecursosPorCurso'
-  get 'mdl_contexts/obetenerCursosPorIdUsuario/:userid', to: 'mdl_contexts#obetenerCursosPorIdUsuario'
+
+  post 'mdl_contexts/misCursos/', to: 'mdl_contexts#misCursos'
 
   post 'mdl_users/verifEmail', to: 'mdl_users#verifEmail'
   get 'mdl_users/emailErroneo', to: 'mdl_users#emailErroneo'
   post 'mdl_users/vcontrasena', to: 'mdl_users#vcontrasena'
+  get 'mdl_contexts/curso/:userid', to: 'mdl_contexts#curso'
+  get 'mdl_contexts/coruse/:id', to: 'mdl_contexts#course'
+
+
 end

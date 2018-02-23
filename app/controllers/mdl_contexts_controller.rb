@@ -3,13 +3,26 @@ class MdlContextsController < ApplicationController
 
   # GET /mdl_contexts
   # GET /mdl_contexts.json
-  def obetenerCursosPorIdUsuario
-    @mdl_contexts = MdlContext.select(:fullname).joins(" INNER JOIN mdl_role_assignments  ra ON  ra.contextid =  mdl_context.id INNER JOIN mdl_course co ON co.id = mdl_context.instanceid" ).where("ra.userid = ? ", params[:userid])
-  return render json: @mdl_contexts
+
+def course
+
+@mdl_context = MdlContext.select(:fullname).joins(" INNER JOIN mdl_role_assignments  ra ON  ra.contextid =  mdl_context.id INNER JOIN mdl_course co ON co.id = mdl_context.instanceid" ).where("ra.userid = ? ", params[:id])
 
 
+render json: @mdl_context
+
+end
+
+
+
+  def curso
+
+  @cusos = MdlContext.select(:fullname).joins(" INNER JOIN mdl_role_assignments  ra ON  ra.contextid =  mdl_context.id INNER JOIN mdl_course co ON co.id = mdl_context.instanceid" ).where("ra.userid = ? ", params[:userid])
+
+  render json: @cursos
 
   end
+
 
   # GET /mdl_contexts/1
   # GET /mdl_contexts/1.json
