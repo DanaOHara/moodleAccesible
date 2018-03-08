@@ -1,4 +1,14 @@
+//
+// El siguiente bloque de texto, aunque comentado,
+// es necesario para que Rails tome los archivos
+// de la carpeta app/assets/stylesheets.
+// Sin este bloque de texto, los css personalizados
+// no funcionan!!!
 
+/* ...
+*= require_self
+*= require_tree .
+*/
 
 @import "bootstrap";
 

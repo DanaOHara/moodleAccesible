@@ -12,14 +12,14 @@
 
 body
 {
-  background-color: black !important;
+  background-color: black;
 
 }
 
 #buttonIngresarLogin
 {
     font-size: 250%;
-  background-color: #004949 !important;
+  background-color: #004949;
 }
 
 #buttonOlvideContraseña
@@ -41,4 +41,11 @@ body
   background-color: #490092 !important;
   font-size: 250%
 
+}
+
+//aportes de pololo
+
+//largo de campo input
+#email{
+  width: 100%;
 }
