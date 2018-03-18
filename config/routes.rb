@@ -29,6 +29,7 @@ get 'mdl_users/', to: 'mdl_users#index'
   post 'mdl_users/vcontrasena', to: 'mdl_users#vcontrasena'
   get 'mdl_contexts/curso/:userid', to: 'mdl_contexts#curso'
   get 'mdl_contexts/coruse/:id', to: 'mdl_contexts#course'
+  get 'mdl_context/buscar', to: 'mdl_context#buscar'
 
 
 end

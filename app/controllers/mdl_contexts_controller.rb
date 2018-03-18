@@ -8,11 +8,23 @@ def course
 
 @mdl_context = MdlContext.select(:id,:fullname).joins(" INNER JOIN mdl_role_assignments  ra ON  ra.contextid =  mdl_context.id INNER JOIN mdl_course co ON co.id = mdl_context.instanceid" ).where("ra.userid = ? ", params[:id])
 
+  if @mdl_context.nil? == true || @mdl_context.blank? == true
 
-render json: @mdl_context
+       render :action =>"buscar"
 
+  else
+
+      render json: @mdl_context
+
+  end
 end
 
+
+def buscar
+
+  redirect_to :action =>"buscar"
+
+end
 
   def show
   end
