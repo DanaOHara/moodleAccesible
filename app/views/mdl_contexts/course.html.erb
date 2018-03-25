@@ -6,15 +6,30 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<div class="row">
+  <div class="col-md-12 courseTitle"><h1>Mis Cursos</h1></div>
+</div>
+<% @mdl_context.each do |mdl_context| %>
 
-<div id="panelLogin" class="container-fluid">
-<div id="panelLoginInterior" class="panel panel-default">
-  <div class="panel-body">
+<div class="row">
+  <a href="#"><div class="col-md-12 courseButton"><%=mdl_context.fullname%></div></a>
+</div>
+<% end %>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+ <div class="container-fluid">
+   <div class="navbar-header">
+     <a class="navbar-brand" href="#"></a>
+   </div>
+   <ul class="nav navbar-nav">
+     <li class="active"><a href="#">Mis Cursos</a></li>
+     <li><a href="#">Buscar Cursos</a></li>
+     <li><a href="#">Mi Usuario</a></li>
+     <li><a href="#">Mis Mensajes</a></li>
+   </ul>
+ </div>
+</nav>
 
 
-
-     <h1> "Hola Mundo para rails" </h1>
 
 <% end %>
-</div>
-</div>

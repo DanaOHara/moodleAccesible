@@ -1,3 +1,38 @@
 // Place all the styles related to the MdlContexts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+body{
+  background-color: red !important;
+}
+
+.courseTitle{
+  background-color: white;
+  font-size: 250%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.courseButton{
+  background-color: white;
+  font-size: 250%;
+  font-weight: bold;
+  text-align: left;
+  padding: 5px 0 5px 0;
+  outline: 1px solid gray;
+}
+
+.menuButton{
+  background-color: white;
+  font-size: 250%;
+  font-weight: bold;
+  text-align: center;
+  outline: 1px solid gray;
+}
+
+.menuBottom{
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
