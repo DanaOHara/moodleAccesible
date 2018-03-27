@@ -26,7 +26,7 @@ get 'mdl_users/', to: 'mdl_users#index'
 
   post 'mdl_users/verifEmail', to: 'mdl_users#verifEmail'
   get 'mdl_users/emailErroneo', to: 'mdl_users#emailErroneo'
-  post 'mdl_users/vcontrasena', to: 'mdl_users#vcontrasena'
+  get 'mdl_users/vcontrasena/:contrasena', to: 'mdl_users#vcontrasena'
   get 'mdl_contexts/curso/:userid', to: 'mdl_contexts#curso'
   get 'mdl_contexts/course/:id', to: 'mdl_contexts#course'
   get 'mdl_context/buscar', to: 'mdl_context#buscar'

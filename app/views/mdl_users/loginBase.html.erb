@@ -5,58 +5,56 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="colorDeFondo">
+  <div id="panelLogin" class="container-fluid">
 
-<div id="panelLogin" class="container-fluid">
+    <div id="panelLoginInterior" class="panel panel-default">
+      <div class="panel-body">
 
-  <div id="panelLoginInterior" class="panel panel-default">
-    <div class="panel-body">
+        <div class="col-lg-12">
 
-      <div class="col-lg-12">
+          <label for="email">Ingresa tu contraseña de usuario del correo usach</label>
 
-        <label for="email">Ingresa tu contraseña de usuario del correo usach</label>
+          <label for="email">
+            <h2>Contraseña:</h2>
+          </label>
 
-        <label for="email">
-          <h2>Contraseña:</h2>
-        </label>
+          <input type="password" class="form-control input-lg" id="pass" name="pass">
 
-        <input type="password" class="form-control input-lg" id="pass" name="pass">
+          <h1></h1>
 
-        <h1></h1>
+          <%= button_to 'Ingresar', mdl_users_loginBase_path , method: :get , class: 'btn btn-primary btn-lg btn-block' %>
 
-        <%= button_to 'Ingresar', mdl_users_loginBase_path , method: :get , class: 'btn btn-primary btn-lg  btn-block' %>
+          <h1></h1>
 
-        <h1></h1>
+          <p id="notice"><%= notice %></p>
 
-        <p id="notice"><%= notice %></p>
+          <h1>Mdl Courses</h1>
 
-        <h1>Mdl Courses</h1>
-
-        <table>
-          <thead>
-            <tr>
-
-              <th>email</th>
-
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @mdl_courses.each do |mdl_course| %>
+          <table>
+            <thead>
               <tr>
-                <td><%= mdl_course.fullname %></td>
+
+                <th>email</th>
+
               </tr>
-            <% end %>
-          </tbody>
-        </table>
+            </thead>
 
-        <br>
+            <tbody>
+              <% @mdl_courses.each do |mdl_course| %>
+                <tr>
+                  <td><%= mdl_course.fullname %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
 
+          <br>
 
+          <h1></h1>
 
-
-        <h1></h1>
-
-      </div>
-    </form>
+        </div>
+      </form>
+    </div>
   </div>
-</div
+</div>

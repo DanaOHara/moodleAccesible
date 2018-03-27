@@ -4,7 +4,7 @@ class MdlUsersController < ApplicationController
 
   before_action :set_mdl_user, only: [ :edit, :update, :destroy,]
 
-
+include BCrypt
 
   # GET /mdl_users
   # GET /mdl_users.json
@@ -31,26 +31,19 @@ class MdlUsersController < ApplicationController
 
   def vcontrasena
 
- user = MdlUser.find_by_email('rosa.munozv@usach.cl')
+    my_password = BCrypt::Password.create(params[:contrasena])
 
-  if user && user.authenticate(params[:contrasena])
+    @cont = '$2y$10$7gQwnERyWZXZ/PjSruFkyenTIfrcfQKMfReeLEbrtcSp2X4hVPSHW'
+    @sal =  BCrypt::Engine.generate_salt(10)
 
-       session[:user_id] = user.id
-       redirect_to '/'
-    render json: user
+    if my_password ==  BCrypt::Engine.hash_secret(@cont,@sal)
 
+    render :json => {password: my_password}
 
-
+    else
+    render :json => {match:"falssssoooOOOOOOOOOOOOOoooo0o0o0o0o0"}
   end
 end
-
-
-
-
-
-
-
-
 
 
   def verifEmail

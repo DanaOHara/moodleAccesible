@@ -6,7 +6,7 @@ class MdlContextsController < ApplicationController
 
 def course
 
-@mdl_context = MdlContext.select(:id,:fullname).joins(" INNER JOIN mdl_role_assignments  ra ON  ra.contextid =  mdl_context.id INNER JOIN mdl_course co ON co.id = mdl_context.instanceid" ).where("ra.userid = ? ", params[:id])
+@mdl_context = MdlContext.select(:fullname,'co.id').joins(" INNER JOIN mdl_role_assignments  ra ON  ra.contextid =  mdl_context.id INNER JOIN mdl_course co ON co.id = mdl_context.instanceid" ).where("ra.userid = ? ", params[:id])
 
   if @mdl_context.nil? == true || @mdl_context.blank? == true
 
@@ -14,6 +14,8 @@ def course
 
   else
 
+
+    #render json: @mdl_context
       return @mdl_context
 
   end
