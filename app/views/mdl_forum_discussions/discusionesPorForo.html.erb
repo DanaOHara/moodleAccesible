@@ -1,4 +1,4 @@
-<%= form_for :mdl_forums, :url => { :action => :forosPorCurso } do |f| %>
+<%= form_for :mdl_forum_discussions, :url => { :action => :discusionesPorForo } do |f| %>
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -6,8 +6,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <div class="btn-group ">
- <%= link_to "Ir a eventos", controller: "mdl_events", action: "eventosPorCurso", courseid:  @mdl_forums.pluck(:course)%>
- <%= link_to "Ir a material", controller: "mdl_resources", action: "obtenerRecursosPorCurso", course:  @mdl_forums.pluck(:course)%>
+ <%= link_to "Volver a foros", controller: "mdl_forums", action: "forosPorCurso", course:  @mdl_forum_discussions.pluck(:course)%>
+
 </div>
 
 
@@ -16,10 +16,10 @@
   <div class="col-md-12 "><h2>Foros</h2></div>
 </div>
 
-<% @mdl_forums.each do |mdl_forums| %>
+<% @mdl_forum_discussions.each do |mdl_forum_discussions| %>
 
 <div class="row">
-<div class="col-md-12 courseButton"><%= link_to mdl_forums.name, controller: "mdl_forum_discussions", action: "discusionesPorForo", forum: mdl_forums.id%></div>
+<div class="col-md-12 courseButton"><%= link_to mdl_forum_discussions.name, controller: "mdl_forum_posts", action: "obtenerPostPorDiscusionPrincipal", discussion: mdl_forum_discussions.id%></div>
 </div>
 <% end %>
 

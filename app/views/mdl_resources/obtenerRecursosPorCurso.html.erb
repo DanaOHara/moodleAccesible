@@ -6,7 +6,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <div class="btn-group ">
- <button type="button" class="btn btn-primary col-lg-6">Ir a mis cursos</button>
+ <%=link_to("Mis cursos", :back)%>
  <%= link_to "Ir a eventos", controller: "mdl_events", action: "eventosPorCurso", courseid:  @mdl_resources.pluck(:course)%>
 </div>
 

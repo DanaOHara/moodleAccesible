@@ -6,14 +6,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <div class="btn-group ">
- <button type="button" class="btn btn-primary col-lg-6">Ir a mis cursos</button>
+ <%= link_to "Ir a material", controller: "mdl_resources", action: "obtenerRecursosPorCurso", course: @mdl_events.pluck(:courseid)%>
  <%= link_to "Ir a foros", controller: "mdl_forums", action: "forosPorCurso", course: @mdl_events.pluck(:courseid)%>
 </div>
 
 
 
 <div class="row">
-  <div class="col-md-12 "><h2>Material</h2></div>
+  <div class="col-md-12 "><h2>Eventos</h2></div>
 </div>
 
 <% @mdl_events.each do |mdl_events| %>

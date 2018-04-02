@@ -17,7 +17,7 @@ get 'mdl_events/eventosPorCurso/:courseid', to: 'mdl_events#eventosPorCurso'
 get 'mdl_users/', to: 'mdl_users#index'
 
   get 'mdl_forums/forosPorCurso/:course', to: 'mdl_forums#forosPorCurso'
-  get 'mdl_forum_discussions/obtenerDiscusionesPorForo/:forum', to: 'mdl_forum_discussions#obtenerDiscusionesPorForo'
+  get 'mdl_forum_discussions/discusionesPorForo/:forum', to: 'mdl_forum_discussions#discusionesPorForo'
   get 'mdl_forums_posts/obtenerPostPorDiscusionPrincipal/:discussion', to: 'mdl_forum_posts#obtenerPostPorDiscusionPrincipal'
   get 'mdl_forums_posts/obtenerPostRespuestas/:discussion/', to: 'mdl_forum_posts#obtenerPostRespuestas'
   get 'mdl_resources/obtenerRecursosPorCurso/:course', to: 'mdl_resources#obtenerRecursosPorCurso'
@@ -32,5 +32,6 @@ get 'mdl_users/', to: 'mdl_users#index'
   get 'mdl_resources/sinRecursos', to: 'mdl_resources#sinRecursos'
   get 'mdl_events/sinEventos', to: 'mdl_events#sinEventos'
   get 'mdl_forums/sinForos', to: 'mdl_forums#sinForos'
+  get 'mdl_forum_discussions/sinDiscusiones', to: 'mdl_forum_discussions#sinDiscusiones' 
 
 end

@@ -21,10 +21,27 @@ class MdlForumDiscussionsController < ApplicationController
   def edit
   end
 
-  def obtenerDiscusionesPorForo
+  def discusionesPorForo
 
-  @mdl_forum_discussions = MdlForumDiscussion.where("forum = ?", params[:forum])
-  return render json: @mdl_forum_discussions
+  @mdl_forum_discussions = MdlForumDiscussion.select(:id,:name,:course).where("forum = ?", params[:forum])
+
+  if @mdl_forum_discussions.nil? == true || @mdl_forum_discussions.blank? == true
+
+  render :action =>"sinDiscusiones"
+
+  else
+
+  return  @mdl_forum_discussions
+
+  end
+
+
+  end
+
+
+  def sinDiscusiones
+
+  redirect_to :action =>"sinDiscusiones"
 
   end
 
