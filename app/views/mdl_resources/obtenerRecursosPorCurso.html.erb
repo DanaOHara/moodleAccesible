@@ -1,4 +1,4 @@
-<%= form_for :mdl_contexts, :url => { :action => :course } do |f| %>
+<%= form_for :mdl_resources, :url => { :action => :obtenerRecursosPorCurso } do |f| %>
 
 
 
@@ -6,12 +6,12 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <div class="row">
-  <div class="col-md-12 courseTitle"><h1>Mis Cursos</h1></div>
+  <div class="col-md-12 courseTitle"><h1>Material</h1></div>
 </div>
-<% @mdl_context.each do |mdl_context| %>
+<% @mdl_resources.each do |mdl_resources| %>
 
 <div class="row">
-<div class="col-md-12 courseButton"><%= link_to mdl_context.fullname, controller: "mdl_resources", action: "obtenerRecursosPorCurso", course: mdl_context.id%></div>
+<div class="col-md-12 courseButton"><%=  mdl_resources.name %></div>
 </div>
 <% end %>
 

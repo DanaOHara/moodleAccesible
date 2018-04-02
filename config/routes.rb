@@ -30,6 +30,7 @@ get 'mdl_users/', to: 'mdl_users#index'
   get 'mdl_contexts/curso/:userid', to: 'mdl_contexts#curso'
   get 'mdl_contexts/course/:id', to: 'mdl_contexts#course'
   get 'mdl_context/buscar', to: 'mdl_context#buscar'
+  get 'mdl_resources/sinRecursos', to: 'mdl_resources#sinRecursos'
 
 
 end

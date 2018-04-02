@@ -17,11 +17,33 @@ class MdlResourcesController < ApplicationController
     @mdl_resource = MdlResource.new
   end
 
+  def sinRecursos
+
+      redirect_to :action =>"sinRecursos"
+
+  end
+
+  def descarga
+
+    render :action => "descarga"
+
+  end
+
+
+
   def obtenerRecursosPorCurso
 
     @mdl_resources = MdlResource.select(:name).where("course = ?", params[:course])
-    return render json: @mdl_resources
 
+    if @mdl_resources.nil? == true || @mdl_resources.blank? == true
+
+         render :action =>"sinRecursos"
+
+    else
+
+    return @mdl_resources
+
+    end
   end
 
 
