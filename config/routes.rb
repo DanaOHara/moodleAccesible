@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 get 'mdl_events/eventosPorCurso/:courseid', to: 'mdl_events#eventosPorCurso'
 get 'mdl_users/', to: 'mdl_users#index'
 
-  get 'mdl_forums/obtenerForosPorCurso/:course', to: 'mdl_forums#obtenerForosPorCurso'
+  get 'mdl_forums/forosPorCurso/:course', to: 'mdl_forums#forosPorCurso'
   get 'mdl_forum_discussions/obtenerDiscusionesPorForo/:forum', to: 'mdl_forum_discussions#obtenerDiscusionesPorForo'
   get 'mdl_forums_posts/obtenerPostPorDiscusionPrincipal/:discussion', to: 'mdl_forum_posts#obtenerPostPorDiscusionPrincipal'
   get 'mdl_forums_posts/obtenerPostRespuestas/:discussion/', to: 'mdl_forum_posts#obtenerPostRespuestas'
@@ -27,10 +27,10 @@ get 'mdl_users/', to: 'mdl_users#index'
   post 'mdl_users/verifEmail', to: 'mdl_users#verifEmail'
   get 'mdl_users/emailErroneo', to: 'mdl_users#emailErroneo'
   get 'mdl_users/vcontrasena/:contrasena', to: 'mdl_users#vcontrasena'
-  get 'mdl_contexts/curso/:userid', to: 'mdl_contexts#curso'
   get 'mdl_contexts/course/:id', to: 'mdl_contexts#course'
   get 'mdl_context/buscar', to: 'mdl_context#buscar'
   get 'mdl_resources/sinRecursos', to: 'mdl_resources#sinRecursos'
-
+  get 'mdl_events/sinEventos', to: 'mdl_events#sinEventos'
+  get 'mdl_forums/sinForos', to: 'mdl_forums#sinForos'
 
 end

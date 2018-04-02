@@ -1,13 +1,21 @@
 <%= form_for :mdl_resources, :url => { :action => :obtenerRecursosPorCurso } do |f| %>
 
 
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<div class="row">
-  <div class="col-md-12 courseTitle"><h1>Material</h1></div>
+<div class="btn-group ">
+ <button type="button" class="btn btn-primary col-lg-6">Ir a mis cursos</button>
+ <%= link_to "Ir a eventos", controller: "mdl_events", action: "eventosPorCurso", courseid:  @mdl_resources.pluck(:course)%>
 </div>
+
+
+
+<div class="row">
+  <div class="col-md-12 "><h2>Material</h2></div>
+</div>
+
 <% @mdl_resources.each do |mdl_resources| %>
 
 <div class="row">

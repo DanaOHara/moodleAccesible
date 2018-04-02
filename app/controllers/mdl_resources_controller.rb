@@ -33,7 +33,7 @@ class MdlResourcesController < ApplicationController
 
   def obtenerRecursosPorCurso
 
-    @mdl_resources = MdlResource.select(:name).where("course = ?", params[:course])
+    @mdl_resources = MdlResource.select(:name,:course).where("course = ?", params[:course])
 
     if @mdl_resources.nil? == true || @mdl_resources.blank? == true
 

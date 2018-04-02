@@ -7,10 +7,23 @@ class MdlForumsController < ApplicationController
     @mdl_forums = MdlForum
   end
 
-  def obtenerForosPorCurso
+  def forosPorCurso
 
-    @mdl_forums = MdlForum.where("course = ?", params[:course])
-    return render json: @mdl_forums
+    @mdl_forums = MdlForum.select(:id,:course,:name).where("course = ?", params[:course])
+
+    if @mdl_forums.nil? == true || @mdl_forums.blank? == true
+
+      render :action =>"sinForos"
+
+    else
+    return  @mdl_forums
+    end
+  end
+
+
+  def sinForos
+
+  redirect_to :action =>"sinForos"
 
   end
 
