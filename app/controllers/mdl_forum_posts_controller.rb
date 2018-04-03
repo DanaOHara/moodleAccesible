@@ -33,10 +33,22 @@ class MdlForumPostsController < ApplicationController
 
     @mdl_forum_posts = MdlForumPost.select(:message).where('discussion = ? ', params[:discussion]).where('parent != 0')
 
-    return render json: @mdl_forum_posts
+      if @mdl_forum_posts.nil? == true || @mdl_forum_posts.blank? == true
+
+        render :action =>"sinPosts"
+
+      else
+
+        return render json: @mdl_forum_posts
+
+    end
   end
 
+def sinPosts
 
+  redirect_to :action =>"sinPosts"
+
+end
 
 
 

@@ -33,5 +33,5 @@ get 'mdl_users/', to: 'mdl_users#index'
   get 'mdl_events/sinEventos', to: 'mdl_events#sinEventos'
   get 'mdl_forums/sinForos', to: 'mdl_forums#sinForos'
   get 'mdl_forum_discussions/sinDiscusiones', to: 'mdl_forum_discussions#sinDiscusiones'
-
+  get 'mdl_forum_posts/sinPosts',to: 'mdl_forum_posts#sinPosts'
 end
