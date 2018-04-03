@@ -1,4 +1,4 @@
-<%= form_for :mdl_forum_discussions, :url => { :action => :discusionesPorForo } do |f| %>
+<%= form_for :mdl_forum_posts, :url => { :action => :postPorDiscusionPrincipal } do |f| %>
 
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -6,22 +6,26 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <div class="btn-group ">
- <%= link_to "Volver a foros", controller: "mdl_forums", action: "forosPorCurso", course:  @mdl_forum_discussions.pluck(:course)%>
+ <%= link_to("Volver a discusiones del foro", :back)%>
 
 </div>
 
 
 
 <div class="row">
-  <div class="col-md-12 "><h2>Foros</h2></div>
+  <div class="col-md-12 "><h2><%=@mdl_forum_posts.pluck(:subject)%></h2></div>
 </div>
 
-<% @mdl_forum_discussions.each do |mdl_forum_discussions| %>
+<% @mdl_forum_posts.each do |mdl_forum_posts| %>
 
 <div class="row">
-<div class="col-md-12 courseButton"><%= link_to mdl_forum_discussions.name, controller: "mdl_forum_posts", action: "postPorDiscusionPrincipal", discussion: mdl_forum_discussions.id%></div>
+
+<div class="col-md-12 courseButton"><%= mdl_forum_posts.message%></div>
 </div>
 <% end %>
+
+ <%= link_to "Ver todos los mensajes del foro", controller: "mdl_forum_posts", action: "postRespuestas", discussion:  @mdl_forum_posts.pluck(:discussion)%>
+<%= link_to "Nuevo"%>
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
  <div class="container-fluid">
