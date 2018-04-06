@@ -13,24 +13,21 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :mdl_users
 
-get 'mdl_events/eventosPorCurso/:courseid', to: 'mdl_events#eventosPorCurso'
+get 'mdl_events/eventosPorCurso/:courseid'
 get 'mdl_users/', to: 'mdl_users#index'
-
   get 'mdl_forums/forosPorCurso/:course', to: 'mdl_forums#forosPorCurso'
   get 'mdl_forum_discussions/discusionesPorForo/:forum', to: 'mdl_forum_discussions#discusionesPorForo'
   get 'mdl_forums_posts/postPorDiscusionPrincipal/:discussion', to: 'mdl_forum_posts#postPorDiscusionPrincipal'
   get 'mdl_forums_posts/postRespuestas/:discussion/', to: 'mdl_forum_posts#postRespuestas'
   get 'mdl_resources/obtenerRecursosPorCurso/:course', to: 'mdl_resources#obtenerRecursosPorCurso'
-
   post 'mdl_contexts/misCursos/', to: 'mdl_contexts#misCursos'
-
   post 'mdl_users/verifEmail', to: 'mdl_users#verifEmail'
   get 'mdl_users/emailErroneo', to: 'mdl_users#emailErroneo'
   get 'mdl_users/vcontrasena/:contrasena', to: 'mdl_users#vcontrasena'
   get 'mdl_contexts/course/:id', to: 'mdl_contexts#course'
   get 'mdl_context/buscar', to: 'mdl_context#buscar'
-  get 'mdl_resources/sinRecursos', to: 'mdl_resources#sinRecursos'
-  get 'mdl_events/sinEventos', to: 'mdl_events#sinEventos'
+  get 'mdl_resources/sinRecursos/:course', to: 'mdl_resources#sinRecursos'
+  get 'mdl_events/sinEventos/:courseid', to: 'mdl_events#sinEventos'
   get 'mdl_forums/sinForos', to: 'mdl_forums#sinForos'
   get 'mdl_forum_discussions/sinDiscusiones', to: 'mdl_forum_discussions#sinDiscusiones'
   get 'mdl_forum_posts/sinPosts',to: 'mdl_forum_posts#sinPosts'

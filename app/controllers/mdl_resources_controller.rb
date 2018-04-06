@@ -19,7 +19,7 @@ class MdlResourcesController < ApplicationController
 
   def sinRecursos
 
-      redirect_to :action =>"sinRecursos"
+
 
   end
 
@@ -37,7 +37,7 @@ class MdlResourcesController < ApplicationController
 
     if @mdl_resources.nil? == true || @mdl_resources.blank? == true
 
-         render :action =>"sinRecursos"
+         redirect_to :action =>"sinRecursos", :course => params[:course]
 
     else
 

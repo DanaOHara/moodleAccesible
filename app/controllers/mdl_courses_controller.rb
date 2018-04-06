@@ -10,27 +10,8 @@ class MdlCoursesController < ApplicationController
 
 
 
-def buscarCursosPorIdeUsuario
 
-@mdl_courses = MdlCourse.joins("")
 
-end
-  # GET /mdl_courses/1
-  # GET /mdl_courses/1.json
-  def show
-  end
-
-  # GET /mdl_courses/new
-  def new
-    @mdl_course = MdlCourse.new
-  end
-
-  # GET /mdl_courses/1/edit
-  def edit
-  end
-
-  # POST /mdl_courses
-  # POST /mdl_courses.json
   def create
     @mdl_course = MdlCourse.new(mdl_course_params)
 

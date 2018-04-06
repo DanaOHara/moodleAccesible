@@ -4,11 +4,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<div class="btn-group ">
- <%=link_to("Mis cursos", :back)%>
- <%= link_to "Ir a eventos", controller: "mdl_events", action: "eventosPorCurso", courseid:  @mdl_resources.pluck(:course)%>
-</div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="container-fluid">
+   <ul class="nav navbar-nav">
+     <li><%=link_to("Mis cursos", :back)%></li>
+     <li><%= link_to "Ir a eventos", controller: "mdl_events", action: "eventosPorCurso", courseid:  @mdl_resources.pluck(:course)%></li>
+   </ul>
+ </div>
+</nav>
 
 
 

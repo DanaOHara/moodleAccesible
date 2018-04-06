@@ -17,7 +17,7 @@ class MdlEventsController < ApplicationController
 
   def sinEventos
 
-      redirect_to :action =>"sinEventos"
+
 
   end
 
