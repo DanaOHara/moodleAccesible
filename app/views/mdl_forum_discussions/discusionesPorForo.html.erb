@@ -5,10 +5,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<div class="btn-group ">
- <%= link_to "Volver a foros", controller: "mdl_forums", action: "forosPorCurso", course:  @mdl_forum_discussions.pluck(:course)%>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="container-fluid">
+   <ul class="nav navbar-nav">
 
+ <li><%= link_to "Volver a foros", controller: "mdl_forums", action: "forosPorCurso", course:  @mdl_forum_discussions.pluck(:course)%></li>
+
+</ul>
 </div>
+</nav>
+
 
 
 
