@@ -14,13 +14,9 @@ class MdlEventsController < ApplicationController
 
 
 
-
   def sinEventos
 
-
-
   end
-
 
 
 
@@ -39,6 +35,7 @@ class MdlEventsController < ApplicationController
     end
   end
 
+  # GET /mdl_events/new
   # GET /mdl_events/new
   def new
     @mdl_event = MdlEvent.new

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :mdl_users
 
-get 'mdl_events/eventosPorCurso/:courseid'
+ get 'mdl_events/eventosPorCurso/:courseid', to: 'mdl_events#eventosPorCurso'
 get 'mdl_users/', to: 'mdl_users#index'
   get 'mdl_forums/forosPorCurso/:course', to: 'mdl_forums#forosPorCurso'
   get 'mdl_forum_discussions/discusionesPorForo/:forum', to: 'mdl_forum_discussions#discusionesPorForo'
